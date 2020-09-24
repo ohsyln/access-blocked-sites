@@ -28,7 +28,7 @@ def index(request):
       if 'http' not in href and href.startswith('/'):
         link['href'] = PREPEND + href
       # href = "./a/b/c" OR "a/b/c" , i.e. relative path
-      else:
+      elif 'http' not in href:
         link['href'] = PREPEND_REL + href
     except:
       # if any <a> tag fails to parse, ignore that tag
